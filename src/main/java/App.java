@@ -16,8 +16,11 @@ public class App {
             MultiThreadRunnable multiThreadRunnable = new MultiThreadRunnable(i);
             Thread myThread = new Thread(multiThreadRunnable);
             myThread.start();
+            System.out.println(myThread.isAlive()); // true - verifica se a thread ainda tá em execução
             // Executa na sequência este conjunto
             myThread.join();
+            System.out.println(myThread.isAlive()); // false - verifica se a thread ainda tá em execução
+
         }
     }
 }
